@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { User } from '../models/model.js';
 import bcrypt from 'bcrypt';
-import { Blacklisted } from '../models/token.js';
+import { Blacklisted } from '../models/blacklisted.js';
 
     // Signup API
 export const signup = async (req, res) => {
