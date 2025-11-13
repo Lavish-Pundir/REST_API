@@ -1,6 +1,5 @@
 import express from "express";
 import { authMiddleware } from "../middleware/auth.js";
-import { BlacklistedToken } from "../middleware/authLogout.js";
 import * as Controller from "../controllers/controller.js";
 
 const router = express.Router();
@@ -16,6 +15,6 @@ router.route("/update/:id").put(authMiddleware, Controller.updateProfile);
 
 router.route("/delete/:id").delete(authMiddleware, Controller.deleteProfile);
 
-router.route("/logout").post(authMiddleware, BlacklistedToken, Controller.logout);
+router.route("/logout").post(authMiddleware, Controller.logout);
 
 export default router;

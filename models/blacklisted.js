@@ -13,5 +13,7 @@ const blacklistedTokenSchema = new mongoose.Schema({
 
      },
 });
+blacklistedTokenSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 }); // auto delete after expiry
+
 
 export const Blacklisted = mongoose.model("BlacklistedToken", blacklistedTokenSchema);
